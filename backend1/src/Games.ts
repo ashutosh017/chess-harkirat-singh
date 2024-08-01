@@ -44,17 +44,16 @@ export class Game {
       (this.moveCount % 2 === 0 && socket !== this.player1) ||
       (this.moveCount % 2 === 1 && socket !== this.player2)
     ) {
-      console.log("early return inside makeMove func");
+      console.log("early return because wrong player is moving the move");
       return;
     }
     try {
       this.board.move(move);
-      console.log("got into try catch inside makeMocve func");
+      console.log("move is correct: ", move);
     } catch (error) {
-      console.log(error);
+      console.log("error in making move: ",move,error);
       return;
     }
-    console.log("move succeed");
 
     if (this.board.isGameOver()) {
       // send the game over message to both the players

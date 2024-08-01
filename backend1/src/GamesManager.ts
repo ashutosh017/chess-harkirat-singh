@@ -25,26 +25,23 @@ export default class GamesManager {
   }
 
   private addHandler(socket: WebSocket) {
-    console.log("addhandler called");
     socket.on("message", (data) => {
       const message = JSON.parse(data.toString());
       if (message.type === INIT_GAME) {
-        console.log("mssg type is init_game");
         if (this.pendingUser) {
           // Start a game
           const game = new Game(this.pendingUser, socket);
           this.games.push(game);
           this.pendingUser = null;
-          console.log("game has been started");
         } else {
           this.pendingUser = socket;
         }
       }
       if(message.type === MOVE){
-        console.log("mssg type is move");
+        console.log("mssg type is move, mssg: ", message);
         const game = this.games.find(game=> game.player1===socket || game.player2===socket)
         if(game){
-          console.log("calling makemove");
+          console.log("calling makemove with move: ", message.payload.move);
             game.makeMove(socket, message.move)
         }
       }

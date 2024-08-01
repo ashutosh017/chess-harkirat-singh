@@ -5,8 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'chess-theme': '#302E2B',
+      },
+    },
   },
   plugins: [],
 }
 
+// 302E2B
