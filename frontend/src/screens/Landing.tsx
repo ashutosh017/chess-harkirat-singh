@@ -10,7 +10,7 @@ export const Landing = ()=>{
             </div>
             <div className="text-white flex flex-col items-center justify-center gap-4 p-4 rounded-md max-w-96 ">
                 <div>
-                <h1 className="font-extrabold text-4xl px-4 py-2">Play Chess Online on the #3 Site!</h1>
+                <h1 className="font-extrabold text-4xl px-4 py-2 text-center sm:text-start">Play Chess Online on the #3 Site!</h1>
                 </div>
                 <div>
                     <Button onclick={()=>navigate('/game')} children={"Play Online"}/>

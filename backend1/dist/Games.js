@@ -35,7 +35,7 @@ class Game {
             console.log("move is correct: ", move);
         }
         catch (error) {
-            console.log("error in making move: ", move, error);
+            console.log("error in making move: ", "move: ", move, error);
             return;
         }
         if (this.board.isGameOver()) {

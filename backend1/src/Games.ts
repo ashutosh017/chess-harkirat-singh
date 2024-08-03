@@ -51,7 +51,7 @@ export class Game {
       this.board.move(move);
       console.log("move is correct: ", move);
     } catch (error) {
-      console.log("error in making move: ",move,error);
+      console.log("error in making move: ","move: ",move,error);
       return;
     }
 
